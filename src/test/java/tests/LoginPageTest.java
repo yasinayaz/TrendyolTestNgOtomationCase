@@ -7,7 +7,7 @@ public class LoginPageTest extends BaseTest {
 
     @Test(priority = 1)
     public void closeLoginPopup() {
-        page.getInstance(LoginPage.class).closeLoginPopup();
+        getInstance().closeLoginPopup();
     }
 
     @Test(priority = 2)
@@ -29,6 +29,7 @@ public class LoginPageTest extends BaseTest {
     public void loginClick() {
         getInstance().loginClick();
     }
+
 
 
     private LoginPage getInstance() {

@@ -42,12 +42,12 @@ public class HomePageTest extends BaseTest {
 
     @Test(priority = 7)
     public void clickFavoryButton(){
-        getInstance().clickFavoryButton();
+        getInstance().clickFavorButton();
     }
 
     @Test(priority = 8)
     public void removeFavoryButton(){
-        getInstance().removeFavoryButton();
+        getInstance().removeFavorButton();
     }
 
     private HomePage getInstance() {

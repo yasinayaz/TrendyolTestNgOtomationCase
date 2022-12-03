@@ -23,22 +23,22 @@ public class LoginPage extends BasePage {
     }
 
     public void clickLoginPageButton() {
-        click(By.xpath("//p[text()='Giriş Yap']"));
+        click(Constant.CLICK_LOGIN_PAGE_BUTTON);
     }
 
     public void epostaClick() {
-        click(By.xpath("//input[@id='login-email']"));
+        click(Constant.EPOSTA_CLICK);
         writeText(By.xpath("//input[@id='login-email']"), "yasintest44@gmail.com");
     }
 
     public void passwordClick() {
-        click(By.xpath("//input[@id=\"login-password-input\"]"));
+        click(Constant.PASSWORD_CLICK);
         writeText(By.xpath("//input[@id=\"login-password-input\"]"), "Deneme11");
 
     }
 
     public void loginClick() {
-        click(By.xpath("//button[@class=\"q-primary q-fluid q-button-medium q-button submit\"]"));
+        click(Constant.LOGIN_CLICK);
     }
 
     public void isEnablePage(){

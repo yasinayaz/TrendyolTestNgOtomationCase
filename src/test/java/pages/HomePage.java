@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import utilities.Constant;
 
 public class HomePage extends BasePage {
 
@@ -13,37 +13,36 @@ public class HomePage extends BasePage {
 
     public void searchProduct() {
         timeout();
-        click(By.xpath("//input[@class=\"vQI670rJ\"]"));
-
+        click(Constant.SEARCH_PRODUCT);
         writeText(By.xpath("//input[@class=\"vQI670rJ\"]"), "Samsung");
     }
 
     public void searchProductClick() {
-        click(By.xpath("//i[@data-testid=\"search-icon\"]"));
+        click(Constant.SEARCH_PRODUCT_CLICK);
         timeout();
     }
 
     public int isScroll() {
         timeout();
-        return getProductSize(By.xpath("//div[@class=\"p-card-wrppr with-campaign-view\"]"));
+        return getProductSize(Constant.IS_SCROLL);
     }
 
     public void hideOverlayButton(){
-        click(By.xpath("//div[@class=\"overlay\"]"));
+        click(Constant.HIDEOVERLAY_BUTTON);
     }
 
     public void selectFavoryButton(){
-        click(By.xpath("(//div[@class=\"fvrt-btn-wrppr\"])[27]"));
+        click(Constant.SELECT_FAVOR_BUTTON);
         timeout();
     }
 
-    public void clickFavoryButton(){
-        click(By.xpath("//p[text()=\"Favorilerim\"]"));
+    public void clickFavorButton(){
+        click(Constant.CLICK_FAVOR_BUTTON);
         timeout();
     }
 
-    public void removeFavoryButton(){
-        click(By.xpath("//div[@class=\"ufvrt-btn-wrppr\"]"));
+    public void removeFavorButton(){
+        click(Constant.REMOVE_FAVOR_BUTTON);
     }
 
 
