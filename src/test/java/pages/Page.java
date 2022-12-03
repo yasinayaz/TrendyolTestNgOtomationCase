@@ -20,13 +20,15 @@ public abstract class Page {
     public abstract void writeText(By locator, String text);
     public abstract String readText(By locator);
     public abstract String getAlertboxText();
-    public abstract WebElement find(By locator);
+    public abstract WebElement findElement(By locator);
     public abstract List<WebElement> multipleFind(By locator);
     public abstract void acceptAlertbox();
     public abstract void selectItem(By locator, String value);
+    public abstract void timeout();
+    public abstract void scrollPage();
 
     @SneakyThrows
-    public <TPage extends BasePage> TPage getInstance(Class<TPage> pageClass) {
+    public <T extends BasePage> T getInstance(Class<T> pageClass) {
         return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(this.driver);
     }
 
