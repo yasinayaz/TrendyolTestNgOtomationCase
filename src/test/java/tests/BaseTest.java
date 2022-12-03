@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.Page;
 import utilities.ConfigReader;
@@ -21,7 +20,7 @@ public class BaseTest {
     //endregion
     @BeforeClass                          //ANNOTATION
     public void classSetUp() {
-        driver = Drivers.initialize_Driver(ConfigReader.initialize_Properties().getProperty("browser"));
+        driver = Drivers.initialize_driver(ConfigReader.initialize_Properties().getProperty("browser"));
     }
 
     @BeforeMethod

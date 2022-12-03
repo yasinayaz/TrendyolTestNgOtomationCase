@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.List;
-
 public class BasePage extends Page {
 
     public BasePage(WebDriver driver) {
@@ -35,7 +33,7 @@ public class BasePage extends Page {
     }
 
     @Override
-    public String getAlertboxText() {
+    public String getAlertBoxText() {
         return null;
     }
 
@@ -49,13 +47,9 @@ public class BasePage extends Page {
         return wait.until(ExpectedConditions.presenceOfElementLocated(key));
     }
 
-    @Override
-    public List<WebElement> multipleFind(By locator) {
-        return null;
-    }
 
     @Override
-    public void acceptAlertbox() {
+    public void acceptAlertBox() {
 
     }
 
@@ -67,7 +61,7 @@ public class BasePage extends Page {
     @Override
     public void timeout() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -77,5 +71,11 @@ public class BasePage extends Page {
     public void scrollPage() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,3500)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
+        timeout();
+    }
+
+    @Override
+    public int getProductSize(By locator) {
+        return driver.findElements(locator).size();
     }
 }

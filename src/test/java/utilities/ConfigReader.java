@@ -1,7 +1,5 @@
 package utilities;
 
-import javafx.css.CssMetaData;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,7 +12,7 @@ public class ConfigReader {
     public static Properties initialize_Properties() {
         properties = new Properties();
 
-        String dosyaYolu="src/test/config.properties";
+        String dosyaYolu = "src/test/config.properties";
 
         try {
             FileInputStream fileInputStream = new FileInputStream(dosyaYolu);

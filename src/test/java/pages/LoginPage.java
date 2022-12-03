@@ -42,33 +42,7 @@ public class LoginPage extends BasePage {
         click(By.xpath("//button[@class=\"q-primary q-fluid q-button-medium q-button submit\"]"));
     }
 
-    public void searchProduct() {
-        timeout();
-        click(By.xpath("//input[@class=\"vQI670rJ\"]"));
-
-        writeText(By.xpath("//input[@class=\"vQI670rJ\"]"), "Samsung");
-    }
-
-    public void searchProductClick() {
-        click(By.xpath("//i[@data-testid=\"search-icon\"]"));
-        timeout();
-
-        int numberOfElementsFound = getNumberOfElementsFound(By.xpath("//div[@class=\"p-card-wrppr with-campaign-view\"]"));
-        for (int pos = 0; pos < numberOfElementsFound; pos++) {
-            System.out.println(pos);
-            //  getElementWithIndex(By.cssSelector("p-card-wrppr with-campaign-view"), pos).doWhateverYouWantWithTheElement()
-        }
-    }
 
 
 
-
-    public int getNumberOfElementsFound(By by) {
-        return driver.findElements(by).size();
-    }
-
-    public WebElement getElementWithIndex(By by, int pos) {
-        return driver.findElements(by).get(pos);
-
-    }
 }
