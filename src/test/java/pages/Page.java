@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public abstract class Page {
     WebDriver driver;
     WebDriverWait wait;
@@ -36,6 +38,9 @@ public abstract class Page {
     public abstract void scrollPage();
 
     public abstract int getProductSize(By locator);
+
+    public abstract List<WebElement> multipleFind(By locator);
+
 
     @SneakyThrows
     public <T extends BasePage> T getInstance(Class<T> pageClass) {

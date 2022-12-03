@@ -28,10 +28,26 @@ public class HomePage extends BasePage {
         return getProductSize(By.xpath("//div[@class=\"p-card-wrppr with-campaign-view\"]"));
     }
 
-    public WebElement getElementWithIndex(By by, int pos) {
-        return driver.findElements(by).get(pos);
-
+    public void hideOverlayButton(){
+        click(By.xpath("//div[@class=\"overlay\"]"));
     }
+
+    public void selectFavoryButton(){
+        click(By.xpath("(//div[@class=\"fvrt-btn-wrppr\"])[27]"));
+        timeout();
+    }
+
+    public void clickFavoryButton(){
+        click(By.xpath("//p[text()=\"Favorilerim\"]"));
+        timeout();
+    }
+
+    public void removeFavoryButton(){
+        click(By.xpath("//div[@class=\"ufvrt-btn-wrppr\"]"));
+    }
+
+
+
 
 
 }

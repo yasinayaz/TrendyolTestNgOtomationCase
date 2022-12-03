@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,6 +39,10 @@ public class LoginPage extends BasePage {
 
     public void loginClick() {
         click(By.xpath("//button[@class=\"q-primary q-fluid q-button-medium q-button submit\"]"));
+    }
+
+    public void isEnablePage(){
+
     }
 
 

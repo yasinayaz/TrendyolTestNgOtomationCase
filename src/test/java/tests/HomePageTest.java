@@ -30,6 +30,26 @@ public class HomePageTest extends BaseTest {
         Assert.assertTrue(productSize > 24);
     }
 
+    @Test(priority = 5)
+    public void hideOverlayButton(){
+        getInstance().hideOverlayButton();
+    }
+
+    @Test(priority = 6)
+    public void selectFavoryButton(){
+        getInstance().selectFavoryButton();
+    }
+
+    @Test(priority = 7)
+    public void clickFavoryButton(){
+        getInstance().clickFavoryButton();
+    }
+
+    @Test(priority = 8)
+    public void removeFavoryButton(){
+        getInstance().removeFavoryButton();
+    }
+
     private HomePage getInstance() {
         return page.getInstance(HomePage.class);
     }

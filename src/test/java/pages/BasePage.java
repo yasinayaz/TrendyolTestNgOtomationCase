@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class BasePage extends Page {
 
     public BasePage(WebDriver driver) {
@@ -29,7 +31,7 @@ public class BasePage extends Page {
 
     @Override
     public String readText(By locator) {
-        return null;
+        return findElement(locator).getText();
     }
 
     @Override
@@ -61,7 +63,7 @@ public class BasePage extends Page {
     @Override
     public void timeout() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -70,12 +72,17 @@ public class BasePage extends Page {
     @Override
     public void scrollPage() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3500)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
+        js.executeScript("window.scrollBy(0,3200)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
         timeout();
     }
 
     @Override
     public int getProductSize(By locator) {
         return driver.findElements(locator).size();
+    }
+
+    @Override
+    public List<WebElement> multipleFind(By locator) {
+        return presenceElement(locator).findElements(locator);
     }
 }
