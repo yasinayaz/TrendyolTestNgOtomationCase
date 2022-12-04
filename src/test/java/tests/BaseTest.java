@@ -1,26 +1,23 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pages.BasePage;
-import pages.Page;
-import utilities.ConfigReader;
-import utilities.Drivers;
+import org.pages.BasePage;
+import org.pages.Page;
+import org.utilities.ConfigReader;
+import org.utilities.Constant;
+import org.utilities.Drivers;
 
 public class BaseTest {
 
-    //region Variables
     protected WebDriver driver;
-    protected ChromeOptions chromeOptions;
-    public Page page;                    // GLOBAL DEĞERİ TANIMLANDI
+    public Page page;
 
-    //endregion
-    @BeforeClass                          //ANNOTATION
+    @BeforeClass
     public void classSetUp() {
-        driver = Drivers.initialize_driver(ConfigReader.initialize_Properties().getProperty("browser"));
+        driver = Drivers.initialize_driver(ConfigReader.initialize_Properties().getProperty(Constant.BROWSER));
     }
 
     @BeforeMethod
@@ -30,7 +27,7 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
-        //     driver.quit();
+        driver.quit();
     }
 }
 

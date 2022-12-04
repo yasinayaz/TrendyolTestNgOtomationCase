@@ -1,7 +1,9 @@
 package tests;
 
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+import org.pages.LoginPage;
+
 
 public class LoginPageTest extends BaseTest {
 
@@ -31,7 +33,7 @@ public class LoginPageTest extends BaseTest {
     }
 
 
-
+    @SneakyThrows
     private LoginPage getInstance() {
         return page.getInstance(LoginPage.class);
     }

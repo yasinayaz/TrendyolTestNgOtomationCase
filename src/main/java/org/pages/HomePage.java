@@ -1,10 +1,10 @@
-package pages;
+package org.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utilities.Constant;
+import org.utilities.Constant;
 
 import java.util.List;
 
@@ -18,25 +18,19 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public boolean isOnUploadPage(){
+    public boolean isOnUploadPage() {
         List<WebElement> myFavorList = getElementListFind(By.xpath("//a[@title=\"trendyol\"]"));
         return myFavorList.isEmpty();
     }
-
 
     public void getMyFavorList() {
         timeout();
         myFavorListSize = 0;
         click(Constant.CLICK_FAVOR_BUTTON2);
-        List<WebElement> myFavorList = getElementListFind(By.xpath("//div[@class=\"p-card-wrppr\"]"));
-        myFavorListSize = myFavorList.size();
+        myFavorListSize = getProductSize(By.xpath("//div[@class=\"p-card-wrppr\"]"));
         driver.navigate().back();
         timeout();
-
-
     }
-
-
 
     public void searchProduct() {
         timeout();
@@ -57,7 +51,7 @@ public class HomePage extends BasePage {
 
     public boolean isScroll() {
         timeout();
-        return getProductSize(Constant.IS_SCROLL)>24;
+        return getProductSize(Constant.IS_SCROLL) > 24;
     }
 
     public void hideOverlayButton() {

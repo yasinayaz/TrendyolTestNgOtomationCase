@@ -1,8 +1,9 @@
 package tests;
 
+import lombok.SneakyThrows;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
+import org.pages.HomePage;
 
 
 public class HomePageTest extends BaseTest {
@@ -71,7 +72,7 @@ public class HomePageTest extends BaseTest {
         getInstance().removeFavorButton();
     }
 
-
+    @SneakyThrows
     private HomePage getInstance() {
         return page.getInstance(HomePage.class);
     }

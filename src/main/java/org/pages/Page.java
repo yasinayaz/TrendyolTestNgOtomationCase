@@ -1,11 +1,10 @@
-package pages;
+package org.pages;
 
-import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public abstract class Page {
@@ -34,8 +33,7 @@ public abstract class Page {
     public abstract List<WebElement> getElementListFind(By locator);
 
 
-    @SneakyThrows
-    public <T extends BasePage> T getInstance(Class<T> pageClass) {
+    public <T extends BasePage> T getInstance(Class<T> pageClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(this.driver);
     }
 

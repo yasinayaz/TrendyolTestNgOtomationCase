@@ -1,4 +1,4 @@
-package utilities;
+package org.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -19,19 +19,19 @@ public class Drivers {
 
         if (driver == null) {
             properties = ConfigReader.getProperties();
-            if (browser.equals("Chrome")) {
+            if (browser.equals(Constant.CHROME)) {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-            } else if (browser.equals("Firefox")) {
+            } else if (browser.equals(Constant.FIREFOX)) {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             } else {
                 WebDriverManager.edgedriver().setup();    //Bos gonderirse
                 driver = new EdgeDriver();
             }
-            String url = properties.getProperty("trendyolUrl");
-            int impWait = Integer.parseInt(properties.getProperty("implicityWait"));
-            int pageWait = Integer.parseInt(properties.getProperty("pageLoadTimeout"));
+            String url = properties.getProperty(Constant.TRENDYOL_URL);
+            int impWait = Integer.parseInt(properties.getProperty(Constant.IMPLICITY_WAIT));
+            int pageWait = Integer.parseInt(properties.getProperty(Constant.PAGE_LOAD_TIMEOUT));
             driver.get(url);
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(pageWait, TimeUnit.SECONDS);

@@ -1,4 +1,4 @@
-package utilities;
+package org.utilities;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,10 +12,9 @@ public class ConfigReader {
     public static Properties initialize_Properties() {
         properties = new Properties();
 
-        String dosyaYolu = "src/test/config.properties";
 
         try {
-            FileInputStream fileInputStream = new FileInputStream(dosyaYolu);
+            FileInputStream fileInputStream = new FileInputStream(Constant.CONFIG_PROPERTIES_PATH);
             properties.load(fileInputStream);
 
         } catch (FileNotFoundException e) {
