@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 
 public class Constant {
 
+    /*
+     *GENERAL
+     */
+
     public static String TRENDYOL_URL = "trendyolUrl";
 
     public static String CHROME = "Chrome";
@@ -13,8 +17,9 @@ public class Constant {
     public static String IMPLICITY_WAIT = "implicityWait";
 
     public static String PAGE_LOAD_TIMEOUT = "pageLoadTimeout";
-    
+
     public static String BROWSER = "browser";
+
     public static String CONFIG_PROPERTIES_PATH = "src/test/config.properties";
 
 
@@ -54,5 +59,10 @@ public class Constant {
     public static By CLICK_FAVOR_BUTTON1 = By.xpath("//p[text()=\"Favorilerim\"]");
 
     public static By REMOVE_FAVOR_BUTTON = By.xpath("//div[@class=\"ufvrt-btn-wrppr\"]");
+
+    public static By MY_FAVOR_LIST = By.xpath("//a[@title=\"trendyol\"]");
+
+    public static By MY_FAVOR_LIST_SIZE = By.xpath("//div[@class=\"p-card-wrppr\"]");
+
 
 }

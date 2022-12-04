@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.utilities.Constant;
 
+
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -30,5 +31,4 @@ public class LoginPage extends BasePage {
     public void loginClick() {
         click(Constant.LOGIN_CLICK);
     }
-
 }

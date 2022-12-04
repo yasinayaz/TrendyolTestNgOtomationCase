@@ -19,7 +19,6 @@ public class BasePage extends Page {
         findElement(locator).click();
     }
 
-
     @Override
     public void writeText(By locator, String text) {
         findElement(locator).sendKeys(text);
@@ -30,7 +29,6 @@ public class BasePage extends Page {
         return findElement(locator).getText();
     }
 
-
     @Override
     public WebElement findElement(By locator) {
         WebElement element = presenceElement(locator);
@@ -40,7 +38,6 @@ public class BasePage extends Page {
     public WebElement presenceElement(By key) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(key));
     }
-
 
     @Override
     public void timeout() {

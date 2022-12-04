@@ -13,13 +13,12 @@ public class HomePage extends BasePage {
     static int myFavorListSize = 0;
     static int currentFavorListSize = 0;
 
-
     public HomePage(WebDriver driver) {     //constructor
         super(driver);
     }
 
     public boolean isOnUploadPage() {
-        List<WebElement> myFavorList = getElementListFind(By.xpath("//a[@title=\"trendyol\"]"));
+        List<WebElement> myFavorList = getElementListFind(Constant.MY_FAVOR_LIST);
         return myFavorList.isEmpty();
     }
 
@@ -27,7 +26,7 @@ public class HomePage extends BasePage {
         timeout();
         myFavorListSize = 0;
         click(Constant.CLICK_FAVOR_BUTTON2);
-        myFavorListSize = getProductSize(By.xpath("//div[@class=\"p-card-wrppr\"]"));
+        myFavorListSize = getProductSize(Constant.MY_FAVOR_LIST_SIZE);
         driver.navigate().back();
         timeout();
     }
@@ -45,7 +44,7 @@ public class HomePage extends BasePage {
 
     public void reScroll() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-3300)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
+        js.executeScript("window.scrollBy(0,-3300)", "");
         timeout();
     }
 
@@ -75,12 +74,9 @@ public class HomePage extends BasePage {
         return myCurrentFavorList > myFavorListSize;
     }
 
-
     public void removeFavorButton() {
         click(Constant.REMOVE_FAVOR_BUTTON);
 
 
     }
-
-
 }
