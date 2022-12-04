@@ -33,7 +33,9 @@ public class Constant {
 
     public static By SELECT_FAVOR_BUTTON =By.xpath("(//div[@class=\"fvrt-btn-wrppr\"])[27]");
 
-    public static By CLICK_FAVOR_BUTTON=By.xpath("//p[text()=\"Favorilerim\"]");
+    public static By CLICK_FAVOR_BUTTON2=By.xpath("(//div[@class=\"icon-container\"])[2]");
+
+    public static By CLICK_FAVOR_BUTTON1=By.xpath("//p[text()=\"Favorilerim\"]");
 
     public static By REMOVE_FAVOR_BUTTON=By.xpath("//div[@class=\"ufvrt-btn-wrppr\"]");
 

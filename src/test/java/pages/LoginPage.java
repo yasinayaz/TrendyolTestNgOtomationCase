@@ -42,7 +42,6 @@ public class LoginPage extends BasePage {
     }
 
     public void isEnablePage(){
-
     }
 
 

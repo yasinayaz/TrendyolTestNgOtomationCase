@@ -19,10 +19,6 @@ public class BasePage extends Page {
         findElement(locator).click();
     }
 
-    @Override
-    public WebElement waitElement(By locator) {
-        return null;
-    }
 
     @Override
     public void writeText(By locator, String text) {
@@ -34,10 +30,6 @@ public class BasePage extends Page {
         return findElement(locator).getText();
     }
 
-    @Override
-    public String getAlertBoxText() {
-        return null;
-    }
 
     @Override
     public WebElement findElement(By locator) {
@@ -51,16 +43,6 @@ public class BasePage extends Page {
 
 
     @Override
-    public void acceptAlertBox() {
-
-    }
-
-    @Override
-    public void selectItem(By locator, String value) {
-
-    }
-
-    @Override
     public void timeout() {
         try {
             Thread.sleep(3000);
@@ -72,7 +54,7 @@ public class BasePage extends Page {
     @Override
     public void scrollPage() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3200)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
+        js.executeScript("window.scrollBy(0,3300)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
         timeout();
     }
 
@@ -82,7 +64,7 @@ public class BasePage extends Page {
     }
 
     @Override
-    public List<WebElement> multipleFind(By locator) {
+    public List<WebElement> getElementListFind(By locator) {
         return presenceElement(locator).findElements(locator);
     }
 }

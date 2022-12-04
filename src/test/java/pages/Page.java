@@ -19,19 +19,11 @@ public abstract class Page {
 
     public abstract void click(By locator);
 
-    public abstract WebElement waitElement(By locator);
-
     public abstract void writeText(By locator, String text);
 
     public abstract String readText(By locator);
 
-    public abstract String getAlertBoxText();
-
     public abstract WebElement findElement(By locator);
-
-    public abstract void acceptAlertBox();
-
-    public abstract void selectItem(By locator, String value);
 
     public abstract void timeout();
 
@@ -39,7 +31,7 @@ public abstract class Page {
 
     public abstract int getProductSize(By locator);
 
-    public abstract List<WebElement> multipleFind(By locator);
+    public abstract List<WebElement> getElementListFind(By locator);
 
 
     @SneakyThrows

@@ -1,15 +1,42 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utilities.Constant;
 
+import java.util.List;
+
 public class HomePage extends BasePage {
+
+    static int myFavorListSize = 0;
+    static int currentFavorListSize = 0;
 
 
     public HomePage(WebDriver driver) {     //constructor
         super(driver);
     }
+
+    public boolean isOnUploadPage(){
+        List<WebElement> myFavorList = getElementListFind(By.xpath("//a[@title=\"trendyol\"]"));
+        return myFavorList.isEmpty();
+    }
+
+
+    public void getMyFavorList() {
+        timeout();
+        myFavorListSize = 0;
+        click(Constant.CLICK_FAVOR_BUTTON2);
+        List<WebElement> myFavorList = getElementListFind(By.xpath("//div[@class=\"p-card-wrppr\"]"));
+        myFavorListSize = myFavorList.size();
+        driver.navigate().back();
+        timeout();
+
+
+    }
+
+
 
     public void searchProduct() {
         timeout();
@@ -22,31 +49,44 @@ public class HomePage extends BasePage {
         timeout();
     }
 
-    public int isScroll() {
+    public void reScroll() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-3300)", "");  //6 ürün satırı atlayarak 2.sayfaya geçmektedir.
         timeout();
-        return getProductSize(Constant.IS_SCROLL);
     }
 
-    public void hideOverlayButton(){
+    public boolean isScroll() {
+        timeout();
+        return getProductSize(Constant.IS_SCROLL)>24;
+    }
+
+    public void hideOverlayButton() {
         click(Constant.HIDEOVERLAY_BUTTON);
     }
 
-    public void selectFavoryButton(){
+    public void selectFavoryButton() {
         click(Constant.SELECT_FAVOR_BUTTON);
+    }
+
+    public void clickFavorButton() {
+        timeout();
+        click(Constant.CLICK_FAVOR_BUTTON1);
         timeout();
     }
 
-    public void clickFavorButton(){
-        click(Constant.CLICK_FAVOR_BUTTON);
-        timeout();
+    public boolean controlMyFavorList() {
+
+        int myCurrentFavorList = getProductSize(By.xpath("//div[@class=\"p-card-wrppr\"]"));
+        currentFavorListSize = myCurrentFavorList;
+        return myCurrentFavorList > myFavorListSize;
     }
 
-    public void removeFavorButton(){
+
+    public void removeFavorButton() {
         click(Constant.REMOVE_FAVOR_BUTTON);
+
+
     }
-
-
-
 
 
 }
