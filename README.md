@@ -10,9 +10,9 @@ Projemizde ;
 
 gibi araç / tool / kütüphaneler kullanılmıştır
 
-* Proje testng.xml dosyası run yapılarak çalıştırılır 
+*Proje testng.xml dosyası run yapılarak çalıştırılır 
 
-* Toplamda 17 test step bulunmaktadır
+*Toplamda 17 test step bulunmaktadır
 
 ---
 
