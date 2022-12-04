@@ -1,10 +1,22 @@
-# TRENDYOL TEST CASE
+# TRENDYOL TEST AUTOMATION CASE
 
-*Test seneryoları Selenium kütüphanesi ve TestNG framework'ü kullanılarak oluşturulmuştur
+Projemizde ;
+* Java
+* Selenium 
+* Maven 
+* TestNG 
+* Page Object Model (POM)
+* Abstract Test Class 
+
+gibi araç / tool / kütüphaneler kullanılmıştır
+
+* Proje testng.xml dosyası run yapılarak çalıştırılır 
+
+* Toplamda 17 test step bulunmaktadır
 
 ---
 
-**Aşağıda belirtilen test stepleri oluşturukmuştur.**
+### Aşağıda belirtilen test stepleri oluşturulmuştur
 
 1.Amazon dışında herhangi bir şirketin sitesine gelecek ve anasayfanin acildigini onaylayacak
 
@@ -28,7 +40,7 @@
 
 ---
 
-### Kişisel Bilgiler
+## Kişisel Bilgiler
 
 [github](https://github.com/yasinayaz) ve
 [Linkedin](https://www.linkedin.com/in/yasin-ayaz44) hesaplarıma burdan ulaşabilirsiniz
